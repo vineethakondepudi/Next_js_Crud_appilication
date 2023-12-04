@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { BASE_URL } from "../config";
 
 
 export default function Page() {
@@ -19,7 +20,7 @@ alert("Title and Description are dequired.");
 return;
           }
          try {
-           const res =  await fetch("http://localhost:3000/api/topics", {
+           const res =  await fetch(`${BASE_URL}/api/topics`, {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json"
